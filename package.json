@@ -1,0 +1,36 @@
+{
+  "name": "multiple-live-canvas",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "build:dev": "dotenv -e .env.development build",
+    "build": "tsc && vite build",
+    "clean": "npx shx rm -rf build",
+    "doctor": "eslint src/**/*.{j,t}s{,x} --fix --no-error-on-unmatched-pattern",
+    "preview": "vite preview",
+    "start-https": "start-server-and-test start:server 7070 start:https",
+    "start:client": "vite",
+    "start:https": "vite --config vite.https-config.ts",
+    "start:server": "npx @fluidframework/azure-local-service@latest",
+    "start": "start-server-and-test start:server 7070 start:client"
+  },
+  "dependencies": {
+    "@fluentui/react-components": "^9.15.6",
+    "@microsoft/live-share": "^1.0.0-preview.4",
+    "@microsoft/live-share-canvas": "^1.0.0-preview.4",
+    "@microsoft/teams-js": "^2.9.0",
+    "@types/react-router-dom": "^5.3.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "@vitejs/plugin-react": "^3.1.0",
+    "typescript": "^4.9.3",
+    "vite": "^4.1.0",
+    "start-server-and-test": "^2.0.0"
+  }
+}
