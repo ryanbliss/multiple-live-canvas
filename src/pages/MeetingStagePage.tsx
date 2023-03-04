@@ -7,7 +7,7 @@ import {
   LiveCanvasList,
   LoadableRenderer,
 } from "../components";
-import { LiveShareProvider, useLiveShareContext, useTeamsClientContext } from "../context";
+import { LiveShareProvider, useTeamsClientContext } from "../context";
 
 export const MeetingStagePage: FC = memo(() => {
   const { teamsContext } = useTeamsClientContext();
