@@ -37,15 +37,14 @@ export const LiveCanvasListItem: FC<ILiveCanvasListItemProps> = ({
       inkingManagerRef.current?.deactivate();
       inkingManagerRef.current?.removeAllListeners();
       inkingManagerRef.current = undefined;
-      if (!canvasRef.current) {
-        return;
-      }
+      if (!canvasRef.current) return;
       while (canvasRef.current.firstChild) {
         if (canvasRef.current.lastChild) {
           canvasRef.current.removeChild(canvasRef.current.lastChild);
         }
       }
     };
+    // selectedCanvasKey is in dependency array so that when the key changes, it will re-render the canvas, which helps re-draw local-user changes. This should be fixed in the future.
   }, [liveCanvas, selectedCanvasKey]);
 
   return (
